@@ -276,6 +276,5 @@ int main()
 	ttg.winner();
 
 	ttg.ExitGame();
-
 	return 0;
 }
