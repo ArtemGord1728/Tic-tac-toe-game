@@ -3,8 +3,6 @@
 #include <ctime>
 
 
-using namespace std;
-
 #define mapSize 3 // field size
 
 #define NULL_Field 0  // empty cell symbol
@@ -49,39 +47,40 @@ private:
 		setlocale(LC_ALL, "ru");
 
 		for (int i = 0; i < A; i++)
-			cout << "--";
-		cout << "-" << endl;
+			std::cout << "--";
+		std::cout << "-" << std::endl;
 	}
+
 
 public:
 	void displayMap()
 	{
 		setlocale(LC_ALL, "ru");
 
-		cout << "Õîä ¹ " << Nmove << endl;
-		cout << endl;
+		std::cout << "Õîä ¹ " << Nmove << std::endl;
+		std::cout << std::endl;
 
-		cout << "\t X";
+		std::cout << "\t X";
 		for (int i = 0; i < A; i++)
-			cout << " " << i + 1 << "  ";
-		cout << endl;
+			std::cout << " " << i + 1 << "  ";
+		std::cout << std::endl;
 
-		cout << "\tY";
+		std::cout << "\tY";
 		line();
 
 
 		for (int i = 0; i < A; i++)
 		{
-			cout << "\t" << i + 1 << "| ";
+			 std::cout << "\t" << i + 1 << "| ";
 			for (int j = 0; j < B; j++)
 			{
-				cout << MAP[i][j] << " | ";
+				std::cout << MAP[i][j] << " | ";
 			}
-			cout << endl;
-			cout << "\t ";
+			std::cout << std::endl;
+			std::cout << "\t ";
 			line();
 		}
-		cout << endl << endl;
+		std::cout << std::endl << std::endl;
 		X = Y = 0;
 	}
 
@@ -89,11 +88,11 @@ public:
 	{
 		setlocale(LC_ALL, "ru");
 
-		cout << "The player is walking " << whoMove << endl;
-		cout << "Enter the X Y coordinate from 1 to " << A << ": ";
-		if ((!(cin >> X) || !(cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_Field)))
+		std::cout << "The player is walking " << whoMove << std::endl;
+		std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
+		if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_Field)))
 		{
-			cin.clear(); while (cin.get() != '\n');
+			std::cin.clear(); while (std::cin.get() != '\n');
 			return false;
 		}
 		else
@@ -197,40 +196,40 @@ public:
 		displayMap();
 
 		if (win != NULL_Field)
-			cout << "The player wins - " << win << "!\n";
+			std::cout << "The player wins - " << win << "!\n";
 
 		else
-			cout << "Draw!\n";
+			std::cout << "Draw!\n";
 	}
 };
-	int main()
+int main()
+{
+	setlocale(LC_ALL, "ru");
+
+	Tic_tac_toe_Game ttg;
+
+	ttg.allNull();
+	ttg.randomFirstMove();
+
+	do
 	{
-		setlocale(LC_ALL, "ru");
+		system("cls");
+		ttg.displayMap();
 
-		Tic_tac_toe_Game ttg;
-
-	   ttg.allNull();
-	   ttg.randomFirstMove();
-
-		do
+		while (!ttg.input())
 		{
 			system("cls");
 			ttg.displayMap();
-
-			while (!ttg.input())
-			{
-				system("cls");
-				ttg.displayMap();
-			}
-			ttg.move();
-			ttg.whoWin();
-			ttg.nextMove();
-		} while ((ttg.win == NULL_Field) && (ttg.Nmove < ttg.A *ttg.A + 1));
+		}
+		ttg.move();
+		ttg.whoWin();
+		ttg.nextMove();
+	} while ((ttg.win == NULL_Field) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 
-		ttg.winner();
+	ttg.winner();
 
 
-		_getch();
-		return 0;
-	}
+	_getch();
+	return 0;
+}
