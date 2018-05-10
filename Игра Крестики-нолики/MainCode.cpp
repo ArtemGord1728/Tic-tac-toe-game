@@ -1,10 +1,10 @@
 #include <iostream>
+#include <string>
 #include <conio.h>
 #include <ctime>
 
 
 #define mapSize 3 // field size
-
 #define NULL_FIELD 0  // empty cell symbol
 #define symbol_cross 88  // symbol of the cross
 #define symbol_zero 79  // noch symbol
@@ -17,8 +17,11 @@ public:
 	static const short int A = mapSize, B = mapSize;
 	char MAP[A][B];
 	char whoMove = NULL_FIELD, win = NULL_FIELD;
+	std::string exitGame = "Yes";
+	std::string dontExitGame = "No";
+	int YesOrNo;
 
-public:
+
 	void allNull()
 	{
 		setlocale(LC_ALL, "ru");
@@ -71,7 +74,7 @@ public:
 
 		for (int i = 0; i < A; i++)
 		{
-			 std::cout << "\t" << i + 1 << "| ";
+			std::cout << "\t" << i + 1 << "| ";
 			for (int j = 0; j < B; j++)
 			{
 				std::cout << MAP[i][j] << " | ";
@@ -117,6 +120,49 @@ public:
 			return symbol_zero;
 		}
 	}
+
+
+	void ExitGame()
+	{
+		std::cout << "Continue to play (check 1 or 2)?" << std::endl;
+		std::cout << std::endl;
+		std::cout << "\t" <<"1."<< exitGame << "\t" <<"2."<< dontExitGame << std::endl;
+
+		std::cin >> YesOrNo;
+
+		switch (YesOrNo)
+		{
+		case 1:
+			_getch();
+			break;
+
+		case 2:
+			allNull();
+			randomFirstMove();
+
+			do
+			{
+				system("cls");
+				displayMap();
+
+				while (!input())
+				{
+					system("cls");
+					displayMap();
+				}
+				move();
+				whoWin();
+				nextMove();
+			} while ((win == NULL_FIELD) && (Nmove < A * A + 1));
+
+			winner();
+			break;
+
+		default:
+			break;
+		}
+	}
+
 
 	void nextMove()
 	{
@@ -197,6 +243,8 @@ public:
 
 		else
 			std::cout << "Standoff!\n";
+
+		std::cout << std::endl;
 	}
 };
 int main()
@@ -205,28 +253,28 @@ int main()
 
 	Tic_tac_toe_Game ttg;
 
-	ttg.allNull();
-	ttg.randomFirstMove();
+	//ttg.allNull();
+	//ttg.randomFirstMove();
 
-	do
-	{
-		system("cls");
-		ttg.displayMap();
+	//do
+	//{
+	//	system("cls");
+	//	ttg.displayMap();
 
-		while (!ttg.input())
-		{
-			system("cls");
-			ttg.displayMap();
-		}
-		ttg.move();
-		ttg.whoWin();
-		ttg.nextMove();
-	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
-
-
-	ttg.winner();
+	//	while (!ttg.input())
+	//	{
+	//		system("cls");
+	//		ttg.displayMap();
+	//	}
+	//	ttg.move();
+	//	ttg.whoWin();
+	//	ttg.nextMove();
+	//} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 
-	_getch();
+	//ttg.winner();
+
+	ttg.ExitGame();
+
 	return 0;
 }
