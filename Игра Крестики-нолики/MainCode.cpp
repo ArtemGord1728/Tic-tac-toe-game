@@ -3,25 +3,26 @@
 #include <conio.h>
 #include <ctime>
 
+
 using namespace std;
 
 #define mapSize 3 //размер поля
 
-#define NUL 0  // символ пустой клетки
+#define NULL_Field 0  // символ пустой клетки
 #define P1 88  // символ крестика
 #define P2 79  // символ нолика
 
 
 const short int A = mapSize, B = mapSize;
 short int X, Y, Nmove = 1;
-char whoMove = NUL, win = NUL;
+char whoMove = NULL_Field, win = NULL_Field;
 char MAP[A][B];
 
 void allNull()
 {
 	for (int i = 0; i < A; i++)
 		for (int j = 0; j < B; j++)
-			MAP[i][j] = NUL;
+			MAP[i][j] = NULL_Field;
 }
 
 void randomFirstMove()
@@ -112,7 +113,7 @@ short int whoWin()
 	for (int i = 0; i < A; i++)
 	{
 		for (int j = 0; j < B - 1; j++)
-			if ((MAP[i][j] == MAP[i][j + 1]) && (MAP[i][j] != NUL))
+			if ((MAP[i][j] == MAP[i][j + 1]) && (MAP[i][j] != NULL_Field))
 				a++;
 		if (a == B - 1)
 		{
@@ -128,7 +129,7 @@ short int whoWin()
 	for (int i = 0; i < A; i++)
 	{
 		for (int j = 0; j < B - 1; j++)
-			if ((MAP[j][i] == MAP[j + 1][i]) && (MAP[j][i] != NUL))
+			if ((MAP[j][i] == MAP[j + 1][i]) && (MAP[j][i] != NULL_Field))
 				a++;
 		if (a == B - 1)
 		{
@@ -141,7 +142,7 @@ short int whoWin()
 
 
 	for (int i = 0, j = A - 1; i < A; i++, j--)
-		if ((MAP[i][j] == MAP[i + 1][j - 1]) && (MAP[i][j] != NUL))
+		if ((MAP[i][j] == MAP[i + 1][j - 1]) && (MAP[i][j] != NULL_Field))
 			a++;
 	if (a == B - 1)
 	{
@@ -152,7 +153,7 @@ short int whoWin()
 		a = 0;
 
 	for (int i = 0, j = 1; i < A; i++, j++)
-		if ((MAP[i][i] == MAP[j][j]) && (MAP[i][i] != NUL))
+		if ((MAP[i][i] == MAP[j][j]) && (MAP[i][i] != NULL_Field))
 			a++;
 	if (a == B - 1)
 	{
@@ -171,7 +172,7 @@ void winner()
 	system("cls");
 	displayMap();
 
-	if (win != NUL)
+	if (win != NULL_Field)
 		cout << "Выиграл игрок " << win << "!\n";
 
 	else
@@ -198,7 +199,7 @@ int main()
 		move();
 		whoWin();
 		nextMove();
-	} while ((win == NUL) && (Nmove < A*A + 1));
+	} while ((win == NULL_Field) && (Nmove < A*A + 1));
 
 
 	winner();
