@@ -5,7 +5,7 @@
 
 #define mapSize 3 // field size
 
-#define NULL_Field 0  // empty cell symbol
+#define NULL_FIELD 0  // empty cell symbol
 #define symbol_cross 88  // symbol of the cross
 #define symbol_zero 79  // noch symbol
 
@@ -16,7 +16,7 @@ public:
 	short int X, Y, Nmove = 1;
 	static const short int A = mapSize, B = mapSize;
 	char MAP[A][B];
-	char whoMove = NULL_Field, win = NULL_Field;
+	char whoMove = NULL_FIELD, win = NULL_FIELD;
 
 public:
 	void allNull()
@@ -25,7 +25,7 @@ public:
 
 		for (int i = 0; i < A; i++)
 			for (int j = 0; j < B; j++)
-				MAP[i][j] = NULL_Field;
+				MAP[i][j] = NULL_FIELD;
 	}
 
 
@@ -57,7 +57,7 @@ public:
 	{
 		setlocale(LC_ALL, "ru");
 
-		std::cout << "Stroke ¹ " << Nmove << std::endl;
+		std::cout << "Step ¹ " << Nmove << std::endl;
 		std::cout << std::endl;
 
 		std::cout << "\t X";
@@ -90,7 +90,7 @@ public:
 
 		std::cout << "The player is walking " << whoMove << std::endl;
 		std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
-		if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_Field)))
+		if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 		{
 			std::cin.clear(); while (std::cin.get() != '\n');
 			return false;
@@ -134,7 +134,7 @@ public:
 		for (int i = 0; i < A; i++)
 		{
 			for (int j = 0; j < B - 1; j++)
-				if ((MAP[i][j] == MAP[i][j + 1]) && (MAP[i][j] != NULL_Field))
+				if ((MAP[i][j] == MAP[i][j + 1]) && (MAP[i][j] != NULL_FIELD))
 					a++;
 			if (a == B - 1)
 			{
@@ -150,7 +150,7 @@ public:
 		for (int i = 0; i < A; i++)
 		{
 			for (int j = 0; j < B - 1; j++)
-				if ((MAP[j][i] == MAP[j + 1][i]) && (MAP[j][i] != NULL_Field))
+				if ((MAP[j][i] == MAP[j + 1][i]) && (MAP[j][i] != NULL_FIELD))
 					a++;
 			if (a == B - 1)
 			{
@@ -163,7 +163,7 @@ public:
 
 
 		for (int i = 0, j = A - 1; i < A; i++, j--)
-			if ((MAP[i][j] == MAP[i + 1][j - 1]) && (MAP[i][j] != NULL_Field))
+			if ((MAP[i][j] == MAP[i + 1][j - 1]) && (MAP[i][j] != NULL_FIELD))
 				a++;
 		if (a == B - 1)
 		{
@@ -174,7 +174,7 @@ public:
 			a = 0;
 
 		for (int i = 0, j = 1; i < A; i++, j++)
-			if ((MAP[i][i] == MAP[j][j]) && (MAP[i][i] != NULL_Field))
+			if ((MAP[i][i] == MAP[j][j]) && (MAP[i][i] != NULL_FIELD))
 				a++;
 		if (a == B - 1)
 		{
@@ -183,9 +183,6 @@ public:
 		}
 		else
 			a = 0;
-
-
-
 	}
 
 	void winner()
@@ -195,11 +192,11 @@ public:
 		system("cls");
 		displayMap();
 
-		if (win != NULL_Field)
+		if (win != NULL_FIELD)
 			std::cout << "The player wins - " << win << "!\n";
 
 		else
-			std::cout << "Draw!\n";
+			std::cout << "Standoff!\n";
 	}
 };
 int main()
@@ -224,7 +221,7 @@ int main()
 		ttg.move();
 		ttg.whoWin();
 		ttg.nextMove();
-	} while ((ttg.win == NULL_Field) && (ttg.Nmove < ttg.A * ttg.A + 1));
+	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 
 	ttg.winner();
