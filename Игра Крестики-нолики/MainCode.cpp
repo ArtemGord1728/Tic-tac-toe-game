@@ -1,4 +1,3 @@
-//игра крестики нолики, можно выбрать любой размер поля, есть ничья
 #include <iostream>
 #include <conio.h>
 #include <ctime>
@@ -6,11 +5,11 @@
 
 using namespace std;
 
-#define mapSize 3 //размер поля
+#define mapSize 3 // field size
 
-#define NULL_Field 0  // символ пустой клетки
-#define P1 88  // символ крестика
-#define P2 79  // символ нолика
+#define NULL_Field 0  // empty cell symbol
+#define symbol_cross 88  // symbol of the cross
+#define symbol_zero 79  // noch symbol
 
 
 const short int A = mapSize, B = mapSize;
@@ -20,22 +19,27 @@ char MAP[A][B];
 
 void allNull()
 {
+
 	for (int i = 0; i < A; i++)
 		for (int j = 0; j < B; j++)
 			MAP[i][j] = NULL_Field;
 }
 
+
+// A function that randomly selects a player (X or 0)
 void randomFirstMove()
 {
+
 	srand(time(0));
 	if (rand() & 1)
-		whoMove = P1;
+		whoMove = symbol_cross;
 	else
-		whoMove = P2;
+		whoMove = symbol_zero;
 }
 
 void line()
 {
+
 	for (int i = 0; i < A; i++)
 		cout << "--";
 	cout << "-" << endl;
@@ -72,9 +76,9 @@ void displayMap()
 
 bool input()
 {
-	cout << "Ход игрока " << whoMove << endl;
-	cout << "Введите координату X Y от 1 до " << A << ": ";
-	if ((!(cin >> X) || !(cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NUL)))
+	cout << "The player is walking " << whoMove << endl;
+	cout << "Enter the X Y coordinate from 1 to " << A << ": ";
+	if ((!(cin >> X) || !(cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_Field)))
 	{
 		cin.clear(); while (cin.get() != '\n');
 		return false;
@@ -87,27 +91,27 @@ short int move()
 {
 	Nmove++;
 
-	if (whoMove == P1)
+	if (whoMove == symbol_cross)
 	{
-		MAP[Y][X] = P1;
-		return P1;
+		MAP[Y][X] = symbol_cross;
+		return symbol_cross;
 	}
 
-	if (whoMove == P2)
+	if (whoMove == symbol_zero)
 	{
-		MAP[Y][X] = P2;
-		return P2;
+		MAP[Y][X] = symbol_zero;
+		return symbol_zero;
 	}
 }
 
 void nextMove()
 {
-	whoMove == P1 ? whoMove = P2 : whoMove = P1;
+	whoMove == symbol_cross ? whoMove = symbol_zero : whoMove = symbol_cross;
 }
 
 short int whoWin()
 {
-	//алгоритмы для вычисления победной комбинации на любом поле
+	//algorithms for calculating the winning combination on any field
 
 	short int a = 0;
 	for (int i = 0; i < A; i++)
@@ -118,7 +122,7 @@ short int whoWin()
 		if (a == B - 1)
 		{
 			win = whoMove;
-			return i + 1;//столбцы
+			return i + 1;//columns
 		}
 		else
 			a = 0;
@@ -134,7 +138,7 @@ short int whoWin()
 		if (a == B - 1)
 		{
 			win = whoMove;
-			return i + 4;//строки
+			return i + 4;//lines
 		}
 		else
 			a = 0;
@@ -173,16 +177,14 @@ void winner()
 	displayMap();
 
 	if (win != NULL_Field)
-		cout << "Выиграл игрок " << win << "!\n";
+		cout << "The player wins - " << win << "!\n";
 
 	else
-		cout << "Ничья!\n";
+		cout << "Draw!\n";
 }
 
 int main()
 {
-	setlocale(0, "Russian");
-
 	allNull();
 	randomFirstMove();
 
