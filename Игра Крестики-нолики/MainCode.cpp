@@ -57,7 +57,7 @@ public:
 	{
 		setlocale(LC_ALL, "ru");
 
-		std::cout << "Õîä ¹ " << Nmove << std::endl;
+		std::cout << "Stroke ¹ " << Nmove << std::endl;
 		std::cout << std::endl;
 
 		std::cout << "\t X";
