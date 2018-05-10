@@ -156,6 +156,7 @@ public:
 			} while ((win == NULL_FIELD) && (Nmove < A * A + 1));
 
 			winner();
+			ExitGame();
 			break;
 
 		default:
@@ -253,26 +254,26 @@ int main()
 
 	Tic_tac_toe_Game ttg;
 
-	//ttg.allNull();
-	//ttg.randomFirstMove();
+	ttg.allNull();
+	ttg.randomFirstMove();
 
-	//do
-	//{
-	//	system("cls");
-	//	ttg.displayMap();
+	do
+	{
+		system("cls");
+		ttg.displayMap();
 
-	//	while (!ttg.input())
-	//	{
-	//		system("cls");
-	//		ttg.displayMap();
-	//	}
-	//	ttg.move();
-	//	ttg.whoWin();
-	//	ttg.nextMove();
-	//} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
+		while (!ttg.input())
+		{
+			system("cls");
+			ttg.displayMap();
+		}
+		ttg.move();
+		ttg.whoWin();
+		ttg.nextMove();
+	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 
-	//ttg.winner();
+	ttg.winner();
 
 	ttg.ExitGame();
 
