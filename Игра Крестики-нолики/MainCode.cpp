@@ -10,7 +10,6 @@
 #define symbol_zero 79  // noch symbol
 
 
-
 class Tic_tac_toe_Game
 {
 public:
@@ -40,7 +39,7 @@ public:
 		setlocale(LC_ALL, "ru");
 
 		srand(time(0));
-		if (rand() & 1)
+		if (rand() % 2)
 			whoMove = symbol_cross;
 		else
 			whoMove = symbol_zero;
@@ -142,10 +141,6 @@ public:
 		switch (YesOrNo)
 		{
 		case 1:
-			_getch();
-			break;
-
-		case 2:
 			allNull();
 			randomFirstMove();
 
@@ -166,6 +161,10 @@ public:
 
 			winner();
 			ExitGame();
+			break;
+
+		case 2:
+			_getch();
 			break;
 
 		default:
