@@ -72,9 +72,10 @@ public:
 			std::cout << " " << i + 1 << "  ";
 		std::cout << std::endl;
 
+
+
 		std::cout << "\tY";
 		line();
-
 
 		for (int i = 0; i < A; i++)
 		{
