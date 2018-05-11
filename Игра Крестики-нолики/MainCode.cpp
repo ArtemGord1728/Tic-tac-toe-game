@@ -103,7 +103,8 @@ public:
 		std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
 		if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 		{
-			std::cin.clear(); while (std::cin.get() != '\n');
+			std::cin.clear();
+			while (std::cin.get() != '\n');
 			return false;
 		}
 		else
