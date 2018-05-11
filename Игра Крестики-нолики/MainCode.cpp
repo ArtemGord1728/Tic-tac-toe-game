@@ -10,6 +10,7 @@
 #define symbol_zero 79  // noch symbol
 
 
+
 class Tic_tac_toe_Game
 {
 public:
@@ -22,6 +23,7 @@ public:
 	int YesOrNo;
 
 
+	// By default, all cells are empty
 	void allNull()
 	{
 		setlocale(LC_ALL, "ru");
@@ -45,6 +47,9 @@ public:
 	}
 
 private:
+
+	//Drawing cells  ****************************************************/  
+	/********************************************************************/
 	void line()
 	{
 		setlocale(LC_ALL, "ru");
@@ -86,7 +91,11 @@ public:
 		std::cout << std::endl << std::endl;
 		X = Y = 0;
 	}
+	/**********************************************************************/
+	/**********************************************************************/
 
+
+	// Enter coordinates for X or 0
 	bool input()
 	{
 		setlocale(LC_ALL, "ru");
@@ -171,10 +180,9 @@ public:
 		whoMove == symbol_cross ? whoMove = symbol_zero : whoMove = symbol_cross;
 	}
 
+	//algorithms for calculating the winning combination on any field
 	short int whoWin()
 	{
-		//algorithms for calculating the winning combination on any field
-
 		setlocale(LC_ALL, "ru");
 
 		short int a = 0;
