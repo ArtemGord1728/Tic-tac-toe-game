@@ -39,6 +39,7 @@ public:
 		setlocale(LC_ALL, "ru");
 
 		srand(time(0));
+
 		if (rand() % 2)
 			whoMove = symbol_cross;
 		else
@@ -93,6 +94,13 @@ public:
 	}
 	/**********************************************************************/
 	/**********************************************************************/
+
+	//Empty function for engine(in a short time I'll start)
+	void GameEngine()
+	{
+
+	}
+
 
 
 	// Enter coordinates for X or 0
