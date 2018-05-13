@@ -263,7 +263,6 @@ public:
 	}
 
 
-
 	// Defines the conqueror
 	void winner()
 	{
