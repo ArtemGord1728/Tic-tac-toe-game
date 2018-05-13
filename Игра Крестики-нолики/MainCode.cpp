@@ -287,8 +287,6 @@ int main()
 
 	Tic_tac_toe_Game ttg;
 
-	ttg.selectCrossZero();
-
     ttg.allNull();
 	ttg.selectCrossZero();
 	do
