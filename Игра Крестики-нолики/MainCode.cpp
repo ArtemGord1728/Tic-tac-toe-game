@@ -33,19 +33,6 @@ public:
 	}
 
 
-	// A function that randomly selects a player (X or 0)
-	void randomFirstMove()
-	{
-		setlocale(LC_ALL, "ru");
-
-		srand(time(NULL));
-
-		if (rand() % 2)
-			whoMove = symbol_cross;
-		else
-			whoMove = symbol_zero;
-	}
-
 private:
 
 	//Drawing cells  ****************************************************/  
@@ -147,7 +134,7 @@ public:
 		{
 		case 1:
 			allNull();
-			randomFirstMove();
+			selectCrossZero();
 
 			do
 			{
@@ -193,13 +180,13 @@ public:
 	}
 
 	// Allows you to select the sign
-	bool selectCrossZero()
+	void selectCrossZero()
 	{
 		char cross = 'X';
 		char zero = 'O';
 		char crossOrzero;
 
-		std::cout << "Choose a sign" << std::endl;
+		std::cout << "Choose a sign: " << std::endl;
 		std::cout << "\t" << cross << "\t" << zero << std::endl;
 
 		std::cin >> crossOrzero;
@@ -208,13 +195,10 @@ public:
 		{
 			whoMove = symbol_cross;
 		}
-
-		if (crossOrzero == 'O' || crossOrzero == 'o')
+		else
 		{
 			whoMove = symbol_zero;
 		}
-
-		return true;
 	}
 
 
@@ -306,7 +290,7 @@ int main()
 	ttg.selectCrossZero();
 
     ttg.allNull();
-	ttg.randomFirstMove();
+	ttg.selectCrossZero();
 	do
 	{
 		system("cls");
