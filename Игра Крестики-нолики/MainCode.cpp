@@ -38,7 +38,7 @@ public:
 	{
 		setlocale(LC_ALL, "ru");
 
-		srand(time(0));
+		srand(time(NULL));
 
 		if (rand() % 2)
 			whoMove = symbol_cross;
@@ -95,10 +95,14 @@ public:
 	/**********************************************************************/
 	/**********************************************************************/
 
-	//Empty function for engine(in a short time I'll start)
+
+	
 	void GameEngine()
 	{
-
+		if (input())
+		{
+			std::cout << "Walking bot" << std::endl;
+		}
 	}
 
 
@@ -106,7 +110,6 @@ public:
 	// Enter coordinates for X or 0
 	bool input()
 	{
-		setlocale(LC_ALL, "ru");
 
 		std::cout << "The player is walking " << whoMove << std::endl;
 		std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
@@ -123,8 +126,6 @@ public:
 	short int move()
 	{
 		setlocale(LC_ALL, "ru");
-
-		Nmove++;
 
 		if (whoMove == symbol_cross)
 		{
