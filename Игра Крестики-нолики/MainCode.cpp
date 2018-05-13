@@ -206,14 +206,12 @@ public:
 
 		if (crossOrzero == 'X' || crossOrzero == 'x')
 		{
-			MAP[Y][X] = symbol_cross;
-			return symbol_cross;
+			whoMove = symbol_cross;
 		}
 
 		if (crossOrzero == 'O' || crossOrzero == 'o')
 		{
-			MAP[Y][X] = symbol_zero;
-			return symbol_zero;
+			whoMove = symbol_zero;
 		}
 
 		return true;
