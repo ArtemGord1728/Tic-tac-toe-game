@@ -192,6 +192,32 @@ public:
 		}
 	}
 
+	// Allows you to select the sign
+	bool selectCrossZero()
+	{
+		char cross = 'X';
+		char zero = 'O';
+		char crossOrzero;
+
+		std::cout << "Choose a sign" << std::endl;
+		std::cout << "\t" << cross << "\t" << zero << std::endl;
+
+		std::cin >> crossOrzero;
+
+		if (crossOrzero == 'X' || crossOrzero == 'x')
+		{
+			MAP[Y][X] = symbol_cross;
+			return symbol_cross;
+		}
+
+		if (crossOrzero == 'O' || crossOrzero == 'o')
+		{
+			MAP[Y][X] = symbol_zero;
+			return symbol_zero;
+		}
+
+		return true;
+	}
 
 
 	//algorithms for calculating the winning combination on any field
@@ -279,9 +305,10 @@ int main()
 
 	Tic_tac_toe_Game ttg;
 
-	ttg.allNull();
-	ttg.randomFirstMove();
+	ttg.selectCrossZero();
 
+    ttg.allNull();
+	ttg.randomFirstMove();
 	do
 	{
 		system("cls");
@@ -294,9 +321,8 @@ int main()
 		}
 		ttg.move();
 		ttg.whoWin();
-		//ttg.nextMove();
+		ttg.nextMove();
 	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
-
 
 	ttg.winner();
 
