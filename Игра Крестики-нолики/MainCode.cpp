@@ -280,6 +280,7 @@ public:
 		std::cout << std::endl;
 	}
 };
+
 int main()
 {
 	setlocale(LC_ALL, "ru");
