@@ -96,15 +96,6 @@ public:
 	/**********************************************************************/
 
 
-	
-	void GameEngine()
-	{
-		if (input())
-		{
-			std::cout << "Walking bot" << std::endl;
-		}
-	}
-
 
 
 	// Enter coordinates for X or 0
@@ -123,6 +114,8 @@ public:
 			return true;
 	}
 
+
+	// Displays crosses and zeros
 	short int move()
 	{
 		setlocale(LC_ALL, "ru");
@@ -141,11 +134,12 @@ public:
 	}
 
 
+	// Exits the game
 	void ExitGame()
 	{
 		std::cout << "Continue to play (check 1 or 2)?" << std::endl;
 		std::cout << std::endl;
-		std::cout << "\t" <<"1."<< exitGame << "\t" <<"2."<< dontExitGame << std::endl;
+		std::cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << std::endl;
 
 		std::cin >> YesOrNo;
 
@@ -184,11 +178,21 @@ public:
 	}
 
 
+	// Transmits the step to another player
 	void nextMove()
 	{
 		setlocale(LC_ALL, "ru");
-		whoMove == symbol_cross ? whoMove = symbol_zero : whoMove = symbol_cross;
+		if (whoMove == symbol_cross)
+		{
+			whoMove = symbol_zero;
+		}
+		else
+		{
+			whoMove = symbol_cross;
+		}
 	}
+
+
 
 	//algorithms for calculating the winning combination on any field
 	short int whoWin()
@@ -250,6 +254,9 @@ public:
 			a = 0;
 	}
 
+
+
+	// Defines the conqueror
 	void winner()
 	{
 		setlocale(LC_ALL, "ru");
@@ -287,7 +294,7 @@ int main()
 		}
 		ttg.move();
 		ttg.whoWin();
-		ttg.nextMove();
+		//ttg.nextMove();
 	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 
