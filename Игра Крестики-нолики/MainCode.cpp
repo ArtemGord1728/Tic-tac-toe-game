@@ -70,7 +70,7 @@ bool Tic_tac_toe_Game::input()
 	if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 	{
 		std::cin.clear();
-		while (std::cin.get() != '\n');
+		while (std::cin.get());
 		return false;
 	}
 	else
@@ -134,8 +134,6 @@ void Tic_tac_toe_Game::ExitGame()
 	case 2:
 		_getch();
 		break;
-
-		system("cls");
 	}
 }
 
