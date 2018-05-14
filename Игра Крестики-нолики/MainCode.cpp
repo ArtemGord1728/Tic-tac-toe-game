@@ -14,7 +14,7 @@ void Tic_tac_toe_Game::allNull()
 
 
 
-//Drawing cells  ****************************************************/  
+//***************************Drawing cells **************************/  
 /********************************************************************/
 void Tic_tac_toe_Game::line()
 {
@@ -81,6 +81,8 @@ bool Tic_tac_toe_Game::input()
 // Displays crosses and zeros
 short int Tic_tac_toe_Game::move()
 {
+	Nmove++;
+
 	setlocale(LC_ALL, "ru");
 
 	if (whoMove == symbol_cross)
