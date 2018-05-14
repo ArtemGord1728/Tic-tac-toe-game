@@ -135,9 +135,7 @@ void Tic_tac_toe_Game::ExitGame()
 		_getch();
 		break;
 
-	default:
-		std::cout << "" << std::endl;
-		break;
+		system("cls");
 	}
 }
 
@@ -177,6 +175,7 @@ void Tic_tac_toe_Game::selectCrossZero()
 	{
 		whoMove = symbol_zero;
 	}
+	system("cls");
 }
 
 
