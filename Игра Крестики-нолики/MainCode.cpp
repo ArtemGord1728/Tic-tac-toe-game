@@ -1,7 +1,6 @@
 #include "BasicFunction.h"
 
 
-
 // By default, all cells are empty
 void Tic_tac_toe_Game::allNull()
 {
