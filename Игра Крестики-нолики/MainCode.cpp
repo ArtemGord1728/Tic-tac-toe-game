@@ -25,7 +25,6 @@ void Tic_tac_toe_Game::line()
 }
 
 
-
 void Tic_tac_toe_Game::displayMap()
 {
 	setlocale(LC_ALL, "ru");
@@ -69,8 +68,6 @@ bool Tic_tac_toe_Game::input()
 	if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 	{
 		std::cin.clear();
-		while (std::cin.get());
-		return false;
 	}
 	else
 		return true;
@@ -143,14 +140,10 @@ void Tic_tac_toe_Game::ExitGame()
 void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
-	if (whoMove == symbol_cross)
-	{
-		whoMove = symbol_zero;
-	}
-	else
-	{
-		whoMove = symbol_cross;
-	}
+
+	/*******Experimental string for future bot (It will walk Zero)******/
+	std::cout << "Walking bot" << std::endl;
+	/*******************************************************************/
 }
 
 
@@ -159,14 +152,14 @@ void Tic_tac_toe_Game::selectCrossZero()
 {
 	char cross = 'X';
 	char zero = 'O';
-	char crossOrzero;
+	char cross_Or_zero;
 
 	std::cout << "Choose a sign: " << std::endl;
 	std::cout << "\t" << cross << "\t" << zero << std::endl;
 
-	std::cin >> crossOrzero;
+	std::cin >> cross_Or_zero;
 
-	if (crossOrzero == 'X' || crossOrzero == 'x')
+	if (cross_Or_zero == 'X' || cross_Or_zero == 'x')
 	{
 		whoMove = symbol_cross;
 	}
