@@ -141,9 +141,7 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
-	/*******Experimental string for future bot (It will walk Zero)******/
 	std::cout << "Walking bot" << std::endl;
-	/*******************************************************************/
 }
 
 
@@ -157,16 +155,28 @@ void Tic_tac_toe_Game::selectCrossZero()
 	std::cout << "Choose a sign: " << std::endl;
 	std::cout << "\t" << cross << "\t" << zero << std::endl;
 
+	link:
 	std::cin >> cross_Or_zero;
 
-	if (cross_Or_zero == 'X' || cross_Or_zero == 'x')
+	switch (cross_Or_zero)
 	{
+	case 'x':
 		whoMove = symbol_cross;
-	}
-	else
-	{
+		break;
+
+
+	case 'o':
 		whoMove = symbol_zero;
+		break;
+
+
+	default:
+		std::cout << "There is no such sign. Choose a sign" << std::endl;
+		goto link;
+		break;
 	}
+
+
 	system("cls");
 }
 
