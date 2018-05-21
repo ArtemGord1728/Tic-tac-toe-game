@@ -152,10 +152,10 @@ void Tic_tac_toe_Game::selectCrossZero()
 	char zero = 'O';
 	char cross_Or_zero;
 
+link:
 	std::cout << "Choose a sign: " << std::endl;
 	std::cout << "\t" << cross << "\t" << zero << std::endl;
 
-	link:
 	std::cin >> cross_Or_zero;
 
 	switch (cross_Or_zero)
@@ -172,6 +172,8 @@ void Tic_tac_toe_Game::selectCrossZero()
 
 	default:
 		std::cout << "There is no such sign. Choose a sign" << std::endl;
+		_getch();
+		system("cls");
 		goto link;
 		break;
 	}
