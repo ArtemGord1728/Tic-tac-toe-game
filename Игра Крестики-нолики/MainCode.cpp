@@ -141,7 +141,7 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
-	std::cout << "Walking bot" << std::endl;
+	whoMove = symbol_zero;
 }
 
 
