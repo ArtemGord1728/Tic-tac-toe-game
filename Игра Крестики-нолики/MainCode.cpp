@@ -141,7 +141,7 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
-	whoMove = symbol_zero;
+	MAP[2][1] = symbol_zero;
 }
 
 
@@ -171,7 +171,7 @@ link:
 
 
 	default:
-		std::cout << "There is no such sign. Choose a sign" << std::endl;
+		std::cout << "There is no such sign. Choose a sign. Press \"Enter\"" << std::endl;
 		_getch();
 		system("cls");
 		goto link;
