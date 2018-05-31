@@ -141,7 +141,15 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
-	MAP[2][1] = symbol_zero;
+	srand(time(NULL));
+
+	for (int i = 0; i < X; i++)
+	{
+		for (int j = 0; j < Y; j++)
+		{
+			MAP[i][j] = symbol_zero;
+		}
+	}
 }
 
 
