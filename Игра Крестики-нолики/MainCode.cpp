@@ -141,6 +141,10 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
+	if (MAP[0][0] = ' ')
+		MAP[0][0] = symbol_zero;
+
+
 	if (MAP[0][1] = ' ')
 		MAP[0][1] = symbol_zero;
 
@@ -151,6 +155,17 @@ void Tic_tac_toe_Game::nextMove()
 
 	if (MAP[0][3] = ' ')
 		MAP[0][3] = symbol_zero;
+
+
+	if (MAP[1][0] = ' ')
+		MAP[1][0] = symbol_zero;
+
+	if (MAP[1][1] = ' ')
+		MAP[1][1] = symbol_zero;
+
+	if (MAP[1][2] = ' ')
+		MAP[1][2] = symbol_zero;
+
 
 }
 
