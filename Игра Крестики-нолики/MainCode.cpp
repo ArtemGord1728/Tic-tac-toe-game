@@ -143,24 +143,40 @@ void Tic_tac_toe_Game::nextMove()
 
 	//Working with coordinate 0
 	/***********************************/
-	if (MAP[0][0] == ' ')
+	if (MAP[0][0] = ' ')
 	{
 		MAP[0][0] = symbol_zero;
 	}
+	else
+	{
+		
+	}
 
-	if (MAP[0][1] == ' ')
+	if (MAP[0][1] = ' ')
 	{
 		MAP[0][1] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[0][2] == ' ')
+	}
+
+	if (MAP[0][2] = ' ')
 	{
 		MAP[0][2] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[0][3] == ' ')
+	}
+
+	if (MAP[0][3] = ' ')
 	{
 		MAP[0][3] = symbol_zero;
+	}
+	else
+	{
+
 	}
 	/*************************************/
 	/*************************************/
@@ -169,24 +185,40 @@ void Tic_tac_toe_Game::nextMove()
 
 	//Working with coordinate 1
 	/*************************************/
-	if (MAP[1][0] ==' ')
+	if (MAP[1][0] =' ')
 	{
 		MAP[1][0] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[1][1] == ' ')
+	}
+
+	if (MAP[1][1] = ' ')
 	{
 		MAP[1][1] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[1][2] == ' ')
+	}
+
+	if (MAP[1][2] = ' ')
 	{
 		MAP[1][2] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[1][3] == ' ')
+	}
+
+	if (MAP[1][3] = ' ')
 	{
 		MAP[1][3] = symbol_zero;
+	}
+	else
+	{
+
 	}
 	/*************************************/
 	/*************************************/
@@ -195,24 +227,40 @@ void Tic_tac_toe_Game::nextMove()
 
 	//Working with coordinate 2
 	/*************************************/
-	if (MAP[2][0] == ' ')
+	if (MAP[2][0] = ' ')
 	{
 		MAP[2][0] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[2][1] == ' ')
+	}
+
+	if (MAP[2][1] = ' ')
 	{
 		MAP[2][1] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[2][2] == ' ')
+	}
+
+	if (MAP[2][2] = ' ')
 	{
 		MAP[2][2] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[2][3] == ' ')
+	}
+
+	if (MAP[2][3] = ' ')
 	{
 		MAP[2][3] = symbol_zero;
+	}
+	else
+	{
+
 	}
 	/*************************************/
 	/*************************************/
@@ -221,24 +269,40 @@ void Tic_tac_toe_Game::nextMove()
 
 	//Working with coordinate 3
 	/*************************************/
-	if (MAP[3][0] == ' ')
+	if (MAP[3][0] = ' ')
 	{
 		MAP[3][0] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[3][1] == ' ')
+	}
+
+	if (MAP[3][1] = ' ')
 	{
 		MAP[3][1] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[3][2] == ' ')
+	}
+
+	if (MAP[3][2] = ' ')
 	{
 		MAP[3][2] = symbol_zero;
 	}
+	else
+	{
 
-	if (MAP[3][3] == ' ')
+	}
+
+	if (MAP[3][3] = ' ')
 	{
 		MAP[3][3] = symbol_zero;
+	}
+	else
+	{
+
 	}
 	/*************************************/
 	/*************************************/
