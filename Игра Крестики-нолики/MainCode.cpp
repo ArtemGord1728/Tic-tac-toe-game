@@ -180,6 +180,22 @@ void Tic_tac_toe_Game::nextMove()
 
 	if (MAP[2][2] = ' ')
 		MAP[2][2] = symbol_zero;
+
+
+	if (MAP[2][3] = ' ')
+		MAP[2][3] = symbol_zero;
+
+	if (MAP[3][0] = ' ')
+		MAP[3][0] = symbol_zero;
+
+	if (MAP[3][1] = ' ')
+		MAP[3][1] = symbol_zero;
+
+	if (MAP[3][2] = ' ')
+		MAP[3][2] = symbol_zero;
+
+	if (MAP[3][3] = ' ')
+		MAP[3][3] = symbol_zero;
 }
 
 
