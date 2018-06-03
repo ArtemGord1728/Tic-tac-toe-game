@@ -142,18 +142,7 @@ void Tic_tac_toe_Game::nextMove()
 	setlocale(LC_ALL, "ru");
 
 	if (whoMove == symbol_cross)
-	{
-		whoMove = symbol_cross;
-	}
-	else
-	{
 		whoMove = symbol_zero;
-	}
-
-	if (whoMove == symbol_zero)
-	{
-		whoMove = symbol_zero;
-	}
 	else
 	{
 		whoMove = symbol_cross;
