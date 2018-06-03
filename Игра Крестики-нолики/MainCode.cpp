@@ -141,6 +141,7 @@ void Tic_tac_toe_Game::nextMove()
 {
 	setlocale(LC_ALL, "ru");
 
+	//Working with coordinate 0
 	/***********************************/
 	if (MAP[0][0] = ' ')
 	{
@@ -166,6 +167,7 @@ void Tic_tac_toe_Game::nextMove()
 
 
 
+	//Working with coordinate 1
 	/*************************************/
 	if (MAP[1][0] = ' ')
 	{
@@ -191,6 +193,7 @@ void Tic_tac_toe_Game::nextMove()
 
 
 
+	//Working with coordinate 2
 	/*************************************/
 	if (MAP[2][0] = ' ')
 	{
@@ -216,6 +219,7 @@ void Tic_tac_toe_Game::nextMove()
 
 
 
+	//Working with coordinate 3
 	/*************************************/
 	if (MAP[3][0] = ' ')
 	{
