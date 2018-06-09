@@ -2,7 +2,7 @@
 
 
 // By default, all cells are empty
-void Tic_tac_toe_Game::allNull()
+void Tic_tac_toe_Game::Null_All_Cell()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -15,7 +15,7 @@ void Tic_tac_toe_Game::allNull()
 
 //***************************Drawing cells **************************/  
 /********************************************************************/
-void Tic_tac_toe_Game::line()
+void Tic_tac_toe_Game::Line()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -25,7 +25,7 @@ void Tic_tac_toe_Game::line()
 }
 
 
-void Tic_tac_toe_Game::displayMap()
+void Tic_tac_toe_Game::ShowMap()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -40,7 +40,7 @@ void Tic_tac_toe_Game::displayMap()
 
 
 	std::cout << "\tY";
-	line();
+	Line();
 
 	for (int i = 0; i < A; i++)
 	{
@@ -51,7 +51,7 @@ void Tic_tac_toe_Game::displayMap()
 		}
 		std::cout << std::endl;
 		std::cout << "\t ";
-		line();
+		Line();
 	}
 	std::cout << std::endl << std::endl;
 	X = Y = 0;
@@ -61,7 +61,7 @@ void Tic_tac_toe_Game::displayMap()
 
 
 // Enter coordinates for X or 0
-bool Tic_tac_toe_Game::input()
+bool Tic_tac_toe_Game::Input()
 {
 	std::cout << "The player is walking " << whoMove << std::endl;
 	std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
@@ -75,7 +75,7 @@ bool Tic_tac_toe_Game::input()
 
 
 // Displays crosses and zeros
-short int Tic_tac_toe_Game::move()
+short int Tic_tac_toe_Game::Move()
 {
 	Nmove++;
 
@@ -107,25 +107,25 @@ void Tic_tac_toe_Game::ExitGame()
 	switch (YesOrNo)
 	{
 	case 1:
-		allNull();
+		Null_All_Cell();
 		selectCrossZero();
 
 		do
 		{
 			system("cls");
-			displayMap();
+			ShowMap();
 
-			while (!input())
+			while (!Input())
 			{
 				system("cls");
-				displayMap();
+				ShowMap();
 			}
-			move();
-			whoWin();
-			nextMove();
+			Move();
+			SearchWin();
+			NextMove();
 		} while ((win == NULL_FIELD) && (Nmove < A * A + 1));
 
-		winner();
+		Winner();
 		ExitGame();
 		break;
 
@@ -137,7 +137,7 @@ void Tic_tac_toe_Game::ExitGame()
 
 
 // Transmits the step to another player
-void Tic_tac_toe_Game::nextMove()
+void Tic_tac_toe_Game::NextMove()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -188,7 +188,7 @@ link:
 }
 
 
-short int Tic_tac_toe_Game::whoWin()
+short int Tic_tac_toe_Game::SearchWin()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -249,12 +249,12 @@ short int Tic_tac_toe_Game::whoWin()
 
 
 // Defines the conqueror
-void Tic_tac_toe_Game::winner()
+void Tic_tac_toe_Game::Winner()
 {
 	setlocale(LC_ALL, "ru");
 
 	system("cls");
-	displayMap();
+	ShowMap();
 
 	if (win != NULL_FIELD)
 		std::cout << "The player wins - " << win << "!\n";
@@ -274,24 +274,24 @@ int main()
 
 	Tic_tac_toe_Game ttg;
 
-	ttg.allNull();
+	ttg.Null_All_Cell();
 	ttg.selectCrossZero();
 	do
 	{
 		system("cls");
-		ttg.displayMap();
+		ttg.ShowMap();
 
-		while (!ttg.input())
+		while (!ttg.Input())
 		{
 			system("cls");
-			ttg.displayMap();
+			ttg.ShowMap();
 		}
-		ttg.move();
-		ttg.whoWin();
-		ttg.nextMove();
+		ttg.Move();
+		ttg.SearchWin();
+		ttg.NextMove();
 	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
-	ttg.winner();
+	ttg.Winner();
 
 	ttg.ExitGame();
 	return 0;

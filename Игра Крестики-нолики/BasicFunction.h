@@ -22,16 +22,16 @@ public:
 	int YesOrNo;
 
 
-	void allNull();
-	void displayMap();
-	bool input();
-	short int move();
+	void Null_All_Cell();
+	void ShowMap();
+	bool Input();
+	short int Move();
 	void ExitGame();
-	void nextMove();
+	void NextMove();
 	void selectCrossZero();
-	short int whoWin();
-	void winner();
+	short int SearchWin();
+	void Winner();
 
 private:
-	void line();
+	void Line();
 };
