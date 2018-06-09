@@ -19,7 +19,7 @@ public:
 	char whoMove = NULL_FIELD, win = NULL_FIELD;
 	std::string exitGame = "Yes";
 	std::string dontExitGame = "No";
-	int YesOrNo;
+	int Choice;
 
 
 	void Null_All_Cell();

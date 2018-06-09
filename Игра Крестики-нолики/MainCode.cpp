@@ -102,9 +102,9 @@ void Tic_tac_toe_Game::ExitGame()
 	std::cout << std::endl;
 	std::cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << std::endl;
 
-	std::cin >> YesOrNo;
+	std::cin >> Choice;
 
-	switch (YesOrNo)
+	switch (Choice)
 	{
 	case 1:
 		Null_All_Cell();
