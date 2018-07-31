@@ -260,7 +260,6 @@ void Tic_tac_toe_Game::Winner()
 
 
 
-
 int main()
 {
 	setlocale(LC_ALL, "ru");
@@ -285,7 +284,6 @@ int main()
 	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
 	ttg.Winner();
-
 	ttg.ExitGame();
 	return 0;
 }
