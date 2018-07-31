@@ -188,6 +188,7 @@ short int Tic_tac_toe_Game::SearchWin()
 	setlocale(LC_ALL, "ru");
 
 	short int a = 0;
+
 	for (int i = 0; i < A; i++)
 	{
 		for (int j = 0; j < B - 1; j++)
