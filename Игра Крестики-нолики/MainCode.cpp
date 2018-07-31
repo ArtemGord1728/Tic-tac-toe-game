@@ -193,6 +193,7 @@ short int Tic_tac_toe_Game::SearchWin()
 		for (int j = 0; j < B - 1; j++)
 			if ((MAP[i][j] == MAP[i][j + 1]) && (MAP[i][j] != NULL_FIELD))
 				a++;
+
 		if (a == B - 1)
 		{
 			win = whoMove;
@@ -251,11 +252,7 @@ void Tic_tac_toe_Game::Winner()
 	system("cls");
 	ShowMap();
 
-	if (win != NULL_FIELD)
-		std::cout << "The player wins - " << win << "!\n";
-
-	else
-		std::cout << "Standoff!\n";
+	win != NULL_FIELD ? std::cout << "The player wins - " << win << "!\n" : std::cout << "Standoff!\n";
 
 	std::cout << std::endl;
 }
