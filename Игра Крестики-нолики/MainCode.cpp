@@ -258,9 +258,9 @@ void Tic_tac_toe_Game::Winner()
 	system("cls");
 	ShowMap();
 
-	win != NULL_FIELD ? std::cout << "The player wins - " << win << "!\n" : std::cout << "Standoff!\n";
+	win != NULL_FIELD ? cout << "The player wins - " << win << "!\n" : cout << "Standoff!\n";
 
-	std::cout << std::endl;
+	cout << endl;
 }
 
 
