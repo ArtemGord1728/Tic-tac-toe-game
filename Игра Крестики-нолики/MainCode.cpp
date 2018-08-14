@@ -286,7 +286,7 @@ int main()
 		ttg.Move();
 		ttg.AlgorithmSearchWin();
 		ttg.NextMove();
-	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
+	} while ((ttg.win == NULL_FIELD) && (ttg.getMove() < ttg.A * ttg.A + 1));
 
 	ttg.Winner();
 	ttg.ExitGame();
