@@ -240,6 +240,7 @@ short int Tic_tac_toe_Game::AlgorithmSearchWin()
 	for (int i = 0, j = 1; i < A; i++, j++)
 		if ((MAP[i][i] == MAP[j][j]) && (MAP[i][i] != NULL_FIELD))
 			a++;
+
 	if (a == B - 1)
 	{
 		win = whoMove;
