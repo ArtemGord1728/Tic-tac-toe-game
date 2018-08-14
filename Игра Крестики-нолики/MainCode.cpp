@@ -67,11 +67,11 @@ void Tic_tac_toe_Game::ShowMap()
 // Enter coordinates for X or 0
 bool Tic_tac_toe_Game::Input()
 {
-	std::cout << "The player is walking " << whoMove << std::endl;
-	std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
-	if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
+	cout << "The player is walking " << whoMove << endl;
+	cout << "Enter the X Y coordinate from 1 to " << A << ": ";
+	if ((!(cin >> X) || !(cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 	{
-		std::cin.clear();
+		cin.clear();
 	}
 	else
 		return true;
