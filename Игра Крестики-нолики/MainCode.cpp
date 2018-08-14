@@ -24,12 +24,17 @@ void Tic_tac_toe_Game::Line()
 	std::cout << "-" << std::endl;
 }
 
+short int Tic_tac_toe_Game::getMove()
+{
+	return Nmove;
+}
 
 void Tic_tac_toe_Game::ShowMap()
 {
 	setlocale(LC_ALL, "ru");
 
 	std::cout << "Step ¹ " << Nmove << std::endl;
+	getMove();
 	std::cout << std::endl;
 
 	std::cout << "\t X";
