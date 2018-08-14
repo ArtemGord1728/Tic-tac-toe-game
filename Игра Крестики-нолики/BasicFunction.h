@@ -24,6 +24,7 @@ public:
 
 	void Null_All_Cell();
 	void ShowMap();
+	short int getMove();
 	bool Input();
 	short int Move();
 	void ExitGame();
