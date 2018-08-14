@@ -13,7 +13,7 @@
 class Tic_tac_toe_Game
 {
 public:
-	short int X, Y, Nmove = 1;
+	//short int X, Y, Nmove = 1;
 	static const short int A = MapSize, B = MapSize;
 	char MAP[A][B];
 	char whoMove = NULL_FIELD, win = NULL_FIELD;
@@ -34,5 +34,6 @@ public:
 	void Winner();
 
 private:
+	short int X, Y, Nmove = 1;
 	void Line();
 };
