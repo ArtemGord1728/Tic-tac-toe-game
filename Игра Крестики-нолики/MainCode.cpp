@@ -102,11 +102,11 @@ short int Tic_tac_toe_Game::Move()
 // Exits the game
 void Tic_tac_toe_Game::ExitGame()
 {
-	std::cout << "Continue to play (check 1 or 2)?" << std::endl;
-	std::cout << std::endl;
-	std::cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << std::endl;
+	cout << "Continue to play (check 1 or 2)?" << endl;
+	cout << endl;
+	cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << endl;
 
-	std::cin >> Choice;
+	cin >> Choice;
 
 	switch (Choice)
 	{
