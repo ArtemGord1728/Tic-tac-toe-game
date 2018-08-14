@@ -121,7 +121,7 @@ void Tic_tac_toe_Game::ExitGame()
 				ShowMap();
 			}
 			Move();
-			SearchWin();
+			AlgorithmSearchWin();
 			NextMove();
 		} while ((win == NULL_FIELD) && (Nmove < A * A + 1));
 
@@ -183,7 +183,7 @@ link:
 }
 
 
-short int Tic_tac_toe_Game::SearchWin()
+short int Tic_tac_toe_Game::AlgorithmSearchWin()
 {
 	setlocale(LC_ALL, "ru");
 
@@ -279,7 +279,7 @@ int main()
 			ttg.ShowMap();
 		}
 		ttg.Move();
-		ttg.SearchWin();
+		ttg.AlgorithmSearchWin();
 		ttg.NextMove();
 	} while ((ttg.win == NULL_FIELD) && (ttg.Nmove < ttg.A * ttg.A + 1));
 
