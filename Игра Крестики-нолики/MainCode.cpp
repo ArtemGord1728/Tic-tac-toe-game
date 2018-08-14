@@ -21,7 +21,7 @@ void Tic_tac_toe_Game::Line()
 
 	for (int i = 0; i < A; i++)
 		std::cout << "--";
-	std::cout << "-" << std::endl;
+	cout << "-" << endl;
 }
 
 short int Tic_tac_toe_Game::getMove()
@@ -34,7 +34,6 @@ void Tic_tac_toe_Game::ShowMap()
 	setlocale(LC_ALL, "ru");
 
 	std::cout << "Step ¹ " << Nmove << std::endl;
-	getMove();
 	std::cout << std::endl;
 
 	std::cout << "\t X";
