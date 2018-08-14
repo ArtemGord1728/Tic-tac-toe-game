@@ -29,7 +29,7 @@ public:
 	void ExitGame();
 	void NextMove();
 	void selectCrossZero();
-	short int SearchWin();
+	short int AlgorithmSearchWin();
 	void Winner();
 
 private:
