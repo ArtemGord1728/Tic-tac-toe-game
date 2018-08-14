@@ -33,31 +33,31 @@ void Tic_tac_toe_Game::ShowMap()
 {
 	setlocale(LC_ALL, "ru");
 
-	std::cout << "Step ¹ " << Nmove << std::endl;
-	std::cout << std::endl;
+	cout << "Step ¹ " << Nmove << endl;
+	cout << endl;
 
-	std::cout << "\t X";
+	cout << "\t X";
 	for (int i = 0; i < A; i++)
-		std::cout << " " << i + 1 << "  ";
-	std::cout << std::endl;
+		cout << " " << i + 1 << "  ";
+	cout << endl;
 
 
 
-	std::cout << "\tY";
+	cout << "\tY";
 	Line();
 
 	for (int i = 0; i < A; i++)
 	{
-		std::cout << "\t" << i + 1 << "| ";
+		cout << "\t" << i + 1 << "| ";
 		for (int j = 0; j < B; j++)
 		{
-			std::cout << MAP[i][j] << " | ";
+			cout << MAP[i][j] << " | ";
 		}
-		std::cout << std::endl;
-		std::cout << "\t ";
+		cout << endl;
+		cout << "\t ";
 		Line();
 	}
-	std::cout << std::endl << std::endl;
+	cout << endl << endl;
 	X = Y = 0;
 }
 /**********************************************************************/
