@@ -202,7 +202,7 @@ short int Tic_tac_toe_Game::AlgorithmSearchWin()
 		if (a == B - 1)
 		{
 			win = whoMove;
-			return i + 1;//columns
+			return i + 1;
 		}
 		else
 			a = 0;
@@ -218,7 +218,7 @@ short int Tic_tac_toe_Game::AlgorithmSearchWin()
 		if (a == B - 1)
 		{
 			win = whoMove;
-			return i + 4;//lines
+			return i + 4;
 		}
 		else
 			a = 0;
