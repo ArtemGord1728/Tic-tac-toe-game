@@ -1,6 +1,12 @@
 #pragma once
 #include <cmath>
 
+struct Connection
+{
+	double weight;
+	double delta;
+};
+
 class Neuron
 {
 public:
