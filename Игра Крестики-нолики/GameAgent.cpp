@@ -3,3 +3,7 @@
 void GameAgent::start() {
 
 }
+
+void GameAgent::step() {
+
+}
