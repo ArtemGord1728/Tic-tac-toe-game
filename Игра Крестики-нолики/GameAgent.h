@@ -6,4 +6,5 @@ class GameAgent
 {
 public:
 	void start();
+	void step();
 };
