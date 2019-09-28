@@ -24,18 +24,18 @@ public:
 	int Choice;
 
 
-	void Null_All_Cell();
-	void ShowMap();
+	void null_cells();
+	void show_map();
 	short int getMove();
-	bool Input();
-	short int Move();
-	void ExitGame();
-	void NextMove();
+	bool input_coordinates();
+	short int move();
+	void exit_game();
+	void next_move();
 	void selectCrossZero();
-	short int AlgorithmSearchWin();
+	short int algorithm_search_winner();
 	void Winner();
 
 private:
 	short int X, Y, Nmove = 1;
-	void Line();
+	void drawing_cells();
 };
