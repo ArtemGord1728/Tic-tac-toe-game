@@ -10,5 +10,10 @@ struct Connection
 class Neuron
 {
 public:
-	double activationFunction(double& value);
+	double activationFunction(double value);
+	double neuronBias(double weight);
+	double summator();
+private:
+	const double momentum;
+	const double learning_rate;
 };
