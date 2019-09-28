@@ -33,7 +33,7 @@ void Tic_tac_toe_Game::ShowMap()
 {
 	setlocale(LC_ALL, "ru");
 
-	cout << "Step ¹ " << Nmove << endl;
+	cout << "Step ¹ " << getMove() << endl;
 	cout << endl;
 
 	cout << "\t X";
@@ -176,7 +176,6 @@ link:
 
 	default:
 		cout << "There is no such sign. Choose a sign. Press \"Enter\"" << endl;
-		_getch();
 		system("cls");
 		goto link;
 		break;
@@ -253,8 +252,6 @@ short int Tic_tac_toe_Game::AlgorithmSearchWin()
 // Defines the conqueror
 void Tic_tac_toe_Game::Winner()
 {
-	setlocale(LC_ALL, "ru");
-
 	system("cls");
 	ShowMap();
 
