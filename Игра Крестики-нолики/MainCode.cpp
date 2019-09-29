@@ -71,7 +71,7 @@ bool Tic_tac_toe_Game::input_coordinates()
 }
 
 
-short int Tic_tac_toe_Game::display()
+uint8_t Tic_tac_toe_Game::display()
 {
 	Nmove++;
 
@@ -136,6 +136,29 @@ void Tic_tac_toe_Game::next_move()
 	setlocale(LC_ALL, "ru");
 
 	whoMove == symbol_cross ? whoMove = symbol_zero : whoMove = symbol_cross;
+}
+
+void Tic_tac_toe_Game::select_mode() {
+	int num_mode = 0;
+	cout << "Choose a mode: " << endl;
+	cout << "1. 2 players \t" << "2. with AI"  << endl;
+	cin >> num_mode;
+	system("cls");
+
+	switch (num_mode)
+	{
+	case 1:
+		selectCrossZero();
+		break;
+
+	case 2:
+		GameAgent agent;
+		agent.start();
+		break;
+
+	default:
+		break;
+	}
 }
 
 
@@ -257,7 +280,7 @@ int main()
 	Tic_tac_toe_Game ttg;
 
 	ttg.null_cells();
-	ttg.selectCrossZero();
+	ttg.select_mode();
 	do
 	{
 		system("cls");
