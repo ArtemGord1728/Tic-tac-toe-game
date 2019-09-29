@@ -11,9 +11,6 @@ void Tic_tac_toe_Game::null_cells()
 }
 
 
-
-//***************************Drawing cells **************************/  
-/********************************************************************/
 void Tic_tac_toe_Game::drawing_cells()
 {
 	setlocale(LC_ALL, "ru");
@@ -74,8 +71,7 @@ bool Tic_tac_toe_Game::input_coordinates()
 }
 
 
-// Displays crosses and zeros
-short int Tic_tac_toe_Game::move()
+short int Tic_tac_toe_Game::display()
 {
 	Nmove++;
 
@@ -119,7 +115,7 @@ void Tic_tac_toe_Game::exit_game()
 				system("cls");
 				show_map();
 			}
-			move();
+			display();
 			algorithm_search_winner();
 			next_move();
 		} while ((win == NULL_FIELD) && (Nmove < A * A + 1));
@@ -272,7 +268,7 @@ int main()
 			system("cls");
 			ttg.show_map();
 		}
-		ttg.move();
+		ttg.display();
 		ttg.algorithm_search_winner();
 		ttg.next_move();
 	} while ((ttg.win == NULL_FIELD) && (ttg.getMove() < pow(ttg.A, 2) + 1));
