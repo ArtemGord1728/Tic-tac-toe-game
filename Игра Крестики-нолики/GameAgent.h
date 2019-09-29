@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-
+#include "Net.h"
+#include "Neuron.h"
 
 class GameAgent
 {
