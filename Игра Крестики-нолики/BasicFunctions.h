@@ -5,6 +5,7 @@
 #include <conio.h>
 #include<math.h>
 #include <ctime>
+#include "GameAgent.h"
 
 using namespace std;
 
@@ -28,10 +29,11 @@ public:
 	void show_map();
 	short int getMove();
 	bool input_coordinates();
-	short int move();
+	uint8_t display();
 	void exit_game();
 	void next_move();
 	void selectCrossZero();
+	void select_mode();
 	short int algorithm_search_winner();
 	void Winner();
 
