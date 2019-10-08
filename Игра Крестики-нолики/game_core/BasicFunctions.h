@@ -6,7 +6,6 @@
 #include<math.h>
 #include <ctime>
 
-using namespace std;
 
 #define MapSize 3 // field size
 #define NULL_FIELD 0  // empty cell symbol

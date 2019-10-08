@@ -17,7 +17,7 @@ void Tic_tac_toe_Game::drawing_cells()
 
 	for (int i = 0; i < A; i++)
 		std::cout << "--";
-	cout << "-" << endl;
+	std::cout << "-" << std::endl;
 }
 
 short int Tic_tac_toe_Game::getMove()
@@ -29,42 +29,42 @@ void Tic_tac_toe_Game::show_map()
 {
 	setlocale(LC_ALL, "ru");
 
-	cout << "Step ¹ " << getMove() << endl;
-	cout << endl;
+	std::cout << "Step ¹ " << getMove() << std::endl;
+	std::cout << std::endl;
 
-	cout << "\t X";
+	std::cout << "\t X";
 	for (int i = 0; i < A; i++)
-		cout << " " << i + 1 << "  ";
-	cout << endl;
+		std::cout << " " << i + 1 << "  ";
+	std::cout << std::endl;
 
 
 
-	cout << "\tY";
+	std::cout << "\tY";
 	drawing_cells();
 
 	for (int i = 0; i < A; i++)
 	{
-		cout << "\t" << i + 1 << "| ";
+		std::cout << "\t" << i + 1 << "| ";
 		for (int j = 0; j < B; j++)
 		{
-			cout << MAP[i][j] << " | ";
+			std::cout << MAP[i][j] << " | ";
 		}
-		cout << endl;
-		cout << "\t ";
+		std::cout << std::endl;
+		std::cout << "\t ";
 		drawing_cells();
 	}
-	cout << endl << endl;
+	std::cout << std::endl << std::endl;
 	X = Y = 0;
 }
 
 
 bool Tic_tac_toe_Game::input_coordinates()
 {
-	cout << "The player is walking " << whoMove << endl;
-	cout << "Enter the X Y coordinate from 1 to " << A << ": ";
-	if ((!(cin >> X) || !(cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
+	std::cout << "The player is walking " << whoMove << std::endl;
+	std::cout << "Enter the X Y coordinate from 1 to " << A << ": ";
+	if ((!(std::cin >> X) || !(std::cin >> Y)) || ((!(X < (A + 1) && X > 0) || !(Y < (B + 1) && Y > 0))) || (!(MAP[--Y][--X] == NULL_FIELD)))
 	{
-		cin.clear();
+		std::cin.clear();
 	}
 	else
 		return true;
@@ -93,11 +93,11 @@ uint8_t Tic_tac_toe_Game::display()
 
 void Tic_tac_toe_Game::exit_game()
 {
-	cout << "Continue to play (check 1 or 2)?" << endl;
-	cout << endl;
-	cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << endl;
+	std::cout << "Continue to play (check 1 or 2)?" << std::endl;
+	std::cout << std::endl;
+	std::cout << "\t" << "1." << exitGame << "\t" << "2." << dontExitGame << std::endl;
 
-	cin >> Choice;
+	std::cin >> Choice;
 
 	switch (Choice)
 	{
@@ -135,14 +135,20 @@ void Tic_tac_toe_Game::next_move()
 {
 	setlocale(LC_ALL, "ru");
 
-	whoMove == symbol_cross ? whoMove = symbol_zero : whoMove = symbol_cross;
+	if (whoMove == symbol_cross) {
+		whoMove = symbol_zero;
+	}
+	else {
+		whoMove = symbol_cross;
+	}
+
 }
 
 void Tic_tac_toe_Game::select_mode() {
 	int num_mode = 0;
-	cout << "Choose a mode: " << endl;
-	cout << "1. 2 players \t" << "2. with AI"  << endl;
-	cin >> num_mode;
+	std::cout << "Choose a mode: " << std::endl;
+	std::cout << "1. 2 players \t" << "2. with AI"  << std::endl;
+	std::cin >> num_mode;
 	system("cls");
 
 	switch (num_mode)
@@ -169,10 +175,10 @@ void Tic_tac_toe_Game::selectCrossZero()
 	char cross_Or_zero;
 
 link:
-	cout << "Choose a sign: " << endl;
-	cout << "\t" << cross << "\t" << zero << endl;
+	std::cout << "Choose a sign: " << std::endl;
+	std::cout << "\t" << cross << "\t" << zero << std::endl;
 
-	cin >> cross_Or_zero;
+	std::cin >> cross_Or_zero;
 
 	switch (cross_Or_zero)
 	{
@@ -187,7 +193,7 @@ link:
 
 
 	default:
-		cout << "There is no such sign. Choose a sign. Press \"Enter\"" << endl;
+		std::cout << "There is no such sign. Choose a sign. Press \"Enter\"" << std::endl;
 		system("cls");
 		goto link;
 		break;
@@ -266,9 +272,9 @@ void Tic_tac_toe_Game::Winner()
 	system("cls");
 	show_map();
 
-	win != NULL_FIELD ? cout << "The player wins - " << win << "!\n" : cout << "Standoff!\n";
+	win != NULL_FIELD ? std::cout << "The player wins - " << win << "!\n" : std::cout << "Standoff!\n";
 
-	cout << endl;
+	std::cout << std::endl;
 }
 
 
