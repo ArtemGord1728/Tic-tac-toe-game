@@ -1,13 +1,21 @@
 #include "Neuron.h"
 
-double Neuron::activationFunction(double val) {
-	return 1 / 1 + abs(val);
+double Neuron::activation(std::vector<double> inputs, std::vector<double> weights) {
+	activationResult_ = 0.0;
+
+	for (size_t i = 0; i < inputs.size(); i++)
+	{
+		activationResult_ = inputs[i] * weights[i];
+	}
+	activationResult_ += biasWeight_;
+
+	return activationResult_;
 }
 
-double Neuron::neuronBias(double weight) {
-	return activationFunction(0.0) + weight;
+double Neuron::computeErrorMSE(double resSigmoid) {
+	return pow((1 - resSigmoid) / 1, 2);
 }
 
-double Neuron::summator() {
-	return 0.0;
+double Neuron::getActivationResult() {
+	return activationResult_; 
 }

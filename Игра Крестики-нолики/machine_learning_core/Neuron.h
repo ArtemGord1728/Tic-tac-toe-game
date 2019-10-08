@@ -1,19 +1,17 @@
 #pragma once
 #include <cmath>
-
-struct Connection
-{
-	double weight;
-	double delta;
-};
+#include <vector>
 
 class Neuron
 {
 public:
-	double activationFunction(double value);
-	double neuronBias(double weight);
-	double summator();
+	double activation(std::vector<double> inputs, std::vector<double> weights);
+	double getActivationResult();
+	double computeErrorMSE(double resSigmoid);
 private:
-	const double momentum;
-	const double learning_rate;
+	double error_;
+	double biasWeight_;
+	double activationResult_;
+	const double momentum_;
+	const double learning_rate_;
 };
