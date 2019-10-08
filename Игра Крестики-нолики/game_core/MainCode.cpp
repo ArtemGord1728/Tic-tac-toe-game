@@ -152,8 +152,8 @@ void Tic_tac_toe_Game::select_mode() {
 		break;
 
 	case 2:
-		GameAgent agent;
-		agent.start(whoMove);
+		
+		
 		break;
 
 	default:
